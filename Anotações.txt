@@ -1,0 +1,277 @@
+Agenda Aula01:
+
+- O que é uma API
+
+- O que é REST
+
+- O que é um REST API
+
+- Métodos e protocolos HTTP
+
+- XML e JSON
+
+- URL, URN, URI
+
+- Framework Flask
+
+==================================================================================================================
+
+O que é uma API:
+
+    - É um conjunto de rotinas para acesso de um aplicativo/software ou plataforma baseado na Web.
+
+    - Acrônimo de Application Programming Interface - Interface de programação de aplicativos.
+
+    - APIs são importantes quando se tem a intenção de realizar integrações com outros serviços.
+
+    - Com as APIs a comunicação de software fica transparente ao usuário.
+
+    - APIs podem ser locais, baseada e web e baseada em programas.
+
+==================================================================================================================
+
+O que é REST:
+
+    - É um modelo a ser utilizado para projetar arquiteturas de software baseado em comunicação via rede.
+
+    - Acrônimo de Representational State Transfer - Transferência de Estado Representacional.
+
+    - Foi definido por Roy Fielding em sua tese de doutorado (PhD) na UC Irvine no ano 2000.
+
+    - REST projeta a idea de que todo recurso deveria responder aos mesmo métodos.
+
+==================================================================================================================
+
+O que é REST API:
+
+    - É uma API desenvolvida utilizando os princípios da arquitetura REST.
+
+    - Um REST API é utilizado na comunicação/integração entre software através de serviços web.
+
+    - Um REST API é consumido através de requisições HTTP.
+
+    - REST APIs são geralmente representados em seus formatos por JSON e XML. 
+      Mas também são usados em formatos de páginas HTML, PDF e arquivos de imagens.
+
+    - Ao implementar um REST API, cada método deve ser responsável por um tipo diferente de ação.
+      Exemplo: Consulta, Alteração Inclusão e Exclusão.
+
+==================================================================================================================
+
+Métodos do protocolo HTTP:
+
+    - GET: Método que solicita algum recurso ou objeto do servidor por meio da URL.
+
+    - POST: Método usado para envio de arquivo/dados ou formulário HTML para o servidor.
+
+    - PUT: Aceitar criar ou modificar um objeto do servidor.
+
+    - DELETE: Informa por meio da URI o objeto a ser deletado.
+
+==================================================================================================================
+
+URL vc URN vs URI:
+
+    - URL: Uniform Resource Locator - Localizador de Recursos Universal
+      Host que será acessado. Exemplo: globallabs.academy
+    
+    - URN: Uniform Resource Name - Nome do Recurso Universal
+      É o recurso que será identificado. Exemplo: /category/blog
+    
+    - URI: Uniform Resource Identifier - Identificador de Recursos Universal
+      É o identificador do recurso, podendo ser uma imagem, arquivo ou uma página. 
+      Exemplo: https://globallabs.academy/category/blog/
+      URI une Protocolo(https://), URL(globallabs.academy) e a URN (/category/blog)
+
+==================================================================================================================
+
+XML - Extensible Markup Language:
+
+    - É uma linguagem de marcação.
+
+    - Utilizada para compartilhamento de informações através de requisições HTTP.
+
+        <xmlcep>
+            <cep>22041-001</cep>
+            <logradouro>Avenida Atlântica</logradouro>
+            <complemento>de 2174 a 2634 - lado par</complemento>
+            <bairro>Copacabana</bairro>
+            <localidade>Rio de Janeiro</localidade>
+            <uf>RJ</uf>
+            <unidade/>
+            <ibge>3304557</ibge>
+            <gia/>
+        </xmlcep>
+
+==================================================================================================================
+
+JSON - JavaScript Object Notation:
+
+    - É um formato de troca de dados entre sistemas idependente da linguágem 
+      utilizada derivada do JavaScript.
+
+    - Muitas linguagens possuem suporte nativo a JSON.
+
+    {
+        "cep": "22041-001",
+        "logradouro":
+        "Avenida Atlantica",
+        "complemento": "de 2174 a 2634 - lado par",
+        "bairro": "Copacabana",
+        "localidade": "Rio de Janeiro",
+        "uf": "RJ", "unidade": "",
+        "ibge": "3304557",
+        "gia":""
+    }
+
+==================================================================================================================
+
+Flask:
+
+    - É um microframework para Python utilizado para desenvolvimento de aplicações WEB.
+
+    - É chamado de microframework porque mantém um núcleo simples, mas é estendível.
+
+    - Flask não possui camada de abstração para banco de dados, validação de formulários
+      entre outros, mas é possível estender com outras bibliotecas.
+
+    - Por ser leve e simples de se usar, Flask é um dos frameworks Python mais utilizados
+      para desenvolvimento de APIs.
+
+
+    - Exemplo de Código:
+
+        from flask import Flask
+        
+        app = Flask(__name__)
+
+        @app.route("/")
+        def hello():
+            return u'Olá mundo!'
+
+        if __name__ == "__main__":
+            app.run()
+            
+==================================================================================================================
+
+Agenda Aula02:
+
+- PIP 
+
+- Instalação do Flask
+
+- Criando um abiente virtual (VirtualEnv)
+
+- Primeira aplicação Flask
+
+- Entendendo os decoradores 
+
+- Postman para realizar requisições HTTP
+
+==================================================================================================================
+
+PIP: 
+
+  - Sistema de gerenciamento de pacotes
+
+  - Utilizado para instalar e gerenciar pacotes/bibliotecas em Python
+
+  - Já vem empacotado com Python desde a versão 3.4
+
+==================================================================================================================
+
+Virtualenv:
+
+  - Ferramenta para criar ambientes Python isolados
+
+  - Vem integrado com o Python desde a versão 3.3
+
+  - Exatamente útil para se trabalhar com projetos que utilizam bibliotecas com versões diferentes.
+    
+    Criando virtualenv (python -m venv ./env)
+    Ativando virtualenv (env/scripts/activate)
+
+==================================================================================================================
+
+Agenda Aula03:
+
+- Retornando JSON
+
+- Entendendo tipagem na URI
+
+- Entendendo métodos
+
+- Lendo informações de entrada vindo como JSON através da requisição
+
+-  Utilizando Postman para teste da API
+
+- Utilizando biblioteca Request para teste da API
+
+==================================================================================================================
+
+Agenda Aula04:
+
+- Criand uma lista de registros
+
+- Implementando métodos GET, POST, PUT e DELETE
+
+- Manipulando dados com as API e métodos implementados
+
+==================================================================================================================
+
+Tarefas que realizaremos:
+
+  - Veremos como imlementar uma API para inclusão de novos desenvolvedores e seus conhecimentos
+
+  - Iremos manipular uma lista que irá conter o nome do desenvolvedor e suas habilidades (linguagens que domina)
+
+  - Tudo isso será feito através de APIs
+
+==================================================================================================================
+
+Agenda Aula05:
+
+- O que é RESTful
+
+- A extensão Flask-RESTful
+
+- Alterando nossa API REST para utilizar a extensão Flask RESTful
+
+==================================================================================================================
+
+REST vs RESTful:
+
+  - REST é um estilo arquitetônico, um modelo para se seguir ao desenvolver APIs.
+
+  - RESTful é um serviço web que utiliza desse paradigma. É utilizado para definir aplicações
+    que implementam webservices e que utilizam a arquitetura REST.
+
+  - Podemos dizer que uma aplicação web que segue a arquitetura REST, ela é RESTful ou seja,
+    tem a capacidade de seguir a arquitetura REST.
+
+==================================================================================================================
+
+Flask-RESTful:
+
+  - É uma extensão do Flask que adiciona suporte para a construção rápida de REST APIs.
+
+  - O uso do Flask-RESTful acaba incentivando as práticas recomendadas para a arquitetura REST
+    com configurações leves
+
+      from flask import Flask
+      from flask_restful import Resource, API
+
+      app = Flask(__name__)
+      api = Api(app)
+
+      class HelloWorld(Resource):
+        def get(self):
+          return {'hello':'world'}
+
+      api.add_resource(HelloWorld, '/')
+
+      if __name__ == '__main__':
+        app.run(debug=True)
+        
+==================================================================================================================
+
