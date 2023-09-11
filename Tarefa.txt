@@ -9,3 +9,6 @@ Exercício Para Praticar:
 
     - O método DELETE deverá deletar uma habilidade que esteja na posição informada na
       requisição.
+
+    - Incluir validação no app-restful para verificar se habilidades informadas
+      existem na lista habilidades.
