@@ -1,7 +1,7 @@
 from flask import Flask, request
 from flask_restful import Resource, Api
 import json
-from habilidades import Habilidades
+from habilidades import Habilidades, HabilidadeId, lista_habilidades
 
 app = Flask(__name__)
 api = Api(app)
@@ -22,6 +22,14 @@ desenvolvedores = [
      'habilidades': ['Python', 'Flask', 'Pandas']
      }
 ]
+
+# Validação de habilidades
+class ValidarHabilidades(Resource):
+    def validarHabilidades(habilidades):
+        for habilidade in habilidades:
+            if habilidades not in lista_habilidades:
+                return False
+        return True
 
 # Devolve um desenvolvedor pelo ID, altera e deleta.
 class Desenvolvedor(Resource):
@@ -55,11 +63,16 @@ class ListaDesenvolvedores(Resource):
         posicao = len(desenvolvedores)
         dados['id'] = posicao
         desenvolvedores.append(dados)
-        return desenvolvedores[posicao]
+        
+            
+        #ValidarHabilidades()
+        
+        return desenvolvedores[posicao]        
     
 api.add_resource(Desenvolvedor, '/dev/<int:id>/')
 api.add_resource(ListaDesenvolvedores, '/dev/')
 api.add_resource(Habilidades, '/habilidades/')
+api.add_resource(HabilidadeId, '/habilidades/<int:id>/')
 
 if __name__ == '__main__':
     app.run()

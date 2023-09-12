@@ -12,3 +12,6 @@ Exercício Para Praticar:
 
     - Incluir validação no app-restful para verificar se habilidades informadas
       existem na lista habilidades.
+
+
+
